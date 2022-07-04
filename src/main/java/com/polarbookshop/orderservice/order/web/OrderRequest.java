@@ -1,5 +1,6 @@
 package com.polarbookshop.orderservice.order.web;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,6 +11,7 @@ import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class OrderRequest {
 
     @NotBlank(message = "The book ISBN must be defined")
