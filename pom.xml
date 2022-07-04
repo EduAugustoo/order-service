@@ -13,11 +13,16 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>order-service</name>
     <description>order-service</description>
+
     <properties>
         <java.version>11</java.version>
         <testcontainers.version>1.17.2</testcontainers.version>
         <spring-cloud.version>2021.0.3</spring-cloud.version>
+        <docker-registry.username>username</docker-registry.username>
+        <docker-registry.password>password</docker-registry.password>
+        <docker-registry.url>url</docker-registry.url>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -123,6 +128,20 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <image>
+                        <env>
+                            <BP_JVM_VERSION>11.*</BP_JVM_VERSION>
+                        </env>
+                    </image>
+                    <docker>
+                        <publishRegistry>
+                            <username>${docker-registry.username}</username>
+                            <password>${docker-registry.password}</password>
+                            <url>${docker-registry.url}</url>
+                        </publishRegistry>
+                    </docker>
+                </configuration>
             </plugin>
         </plugins>
     </build>
