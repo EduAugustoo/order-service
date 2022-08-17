@@ -6,4 +6,4 @@ custom_build(
 
 k8s_yaml(['k8s/deployment.yml', 'k8s/service.yml'])
 
-k8s_resource('order-service', port_forward=['9002'])
+k8s_resource('order-service', port_forwards=['9002'])
