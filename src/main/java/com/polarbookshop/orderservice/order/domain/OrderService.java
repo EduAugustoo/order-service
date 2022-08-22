@@ -22,8 +22,8 @@ public class OrderService {
 
     private final StreamBridge streamBridge;
 
-    public Flux<Order> getAllOrders() {
-        return this.orderRepository.findAll();
+    public Flux<Order> getAllOrders(String userId) {
+        return this.orderRepository.findAllByCreatedBy(userId);
     }
 
     @Transactional
@@ -75,6 +75,8 @@ public class OrderService {
                 OrderStatus.DISPATCHED,
                 existingOrder.getCreatedDate(),
                 existingOrder.getLastModifiedDate(),
+                existingOrder.getCreatedBy(),
+                existingOrder.getLastModifiedBy(),
                 existingOrder.getVersion());
     }
 }
