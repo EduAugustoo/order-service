@@ -66,8 +66,15 @@ public class OrderService {
     }
 
     private Order buildDispatchedOrder(Order existingOrder) {
-        return new Order(existingOrder.getId(), existingOrder.getBookIsbn(), existingOrder.getBookName(),
-                existingOrder.getBookPrice(), existingOrder.getQuantity(), OrderStatus.DISPATCHED,
-                existingOrder.getCreatedDate(), existingOrder.getLastModifiedDate(), existingOrder.getVersion());
+        return new Order(
+                existingOrder.getId(),
+                existingOrder.getBookIsbn(),
+                existingOrder.getBookName(),
+                existingOrder.getBookPrice(),
+                existingOrder.getQuantity(),
+                OrderStatus.DISPATCHED,
+                existingOrder.getCreatedDate(),
+                existingOrder.getLastModifiedDate(),
+                existingOrder.getVersion());
     }
 }
