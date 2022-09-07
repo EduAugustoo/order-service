@@ -10,4 +10,5 @@ configMapGenerator:
     files:
       - application.yml
     options:
-      labels: order-service
+      labels:
+        app: order-service
