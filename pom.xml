@@ -15,6 +15,7 @@
     <description>order-service</description>
 
     <properties>
+        <imageName>${project.artifactId}:${project.version}</imageName>
         <java.version>11</java.version>
         <testcontainers.version>1.17.2</testcontainers.version>
         <test-keycloak.version>2.1.2</test-keycloak.version>
@@ -180,7 +181,7 @@
                 </executions>
                 <configuration>
                     <image>
-                        <name>${project.artifactId}</name>
+                        <name>${imageName}</name>
                         <env>
                             <BP_JVM_VERSION>11.*</BP_JVM_VERSION>
                         </env>
