@@ -69,7 +69,7 @@ jobs:
       - name: Build container image
         run: |
           chmod +x mvnw
-          ./mvnw spring-boot:build-image "-DimageName=${ {env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}"
+          ./mvnw spring-boot:build-image "-DimageName=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}"
       - name: OCI image vunerability scanning
         uses: anchore/scan-action@v3
         id: scan
